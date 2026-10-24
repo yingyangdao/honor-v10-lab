@@ -1,0 +1,39 @@
+# ===== 大文件 / 二进制（不入库，本地保留） =====
+tools/
+firmware/
+phone_backup/
+capture/
+archive/
+
+# ===== 镜像 / 固件 / 抓包产物 =====
+*.img
+*.bin
+*.pcap
+*.pcapng
+*.zip
+*.7z
+*.xz
+*.apk
+*.jar
+*.exe
+*.dll
+*.so
+
+# ===== 截图（只保留文档插图） =====
+*.png
+*.jpg
+*.jpeg
+*.gif
+!docs/assets/*.png
+
+# ===== 系统垃圾 =====
+Thumbs.db
+desktop.ini
+.DS_Store
+$RECYCLE.BIN/
+
+# ===== 编辑器 =====
+.vscode/
+.idea/
+*.swp
+*~
