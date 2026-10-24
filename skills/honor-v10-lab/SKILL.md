@@ -29,6 +29,7 @@ whenToUse: 需要用这台荣耀V10做任何事时——查设备状态、执行
 3. **别用 Magisk Manager 的「安装/修复运行环境」** —— 本机没 boot 分区，会把 recovery_ramdisk 搞坏
 4. **别用 `magisk --sqlite` 跑带子查询的 SQL** —— 会把 magiskd 搞崩，root 全失效
 5. **toybox 的 `dd` 不认 `bs=1M`** —— 写 `bs=1048576`
+6. **判断是否解锁看 `/proc/cmdline`** —— `getprop ro.boot.flash.locked` 被 Magisk 伪装成 `1`，不可信
 
 ## 快速上手（每个新会话第一步）
 

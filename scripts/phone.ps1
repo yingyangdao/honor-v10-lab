@@ -22,7 +22,11 @@ switch ($Action.ToLower()) {
   'status' {
     Write-Host '== devices ==' -ForegroundColor Cyan; & $ADB devices -l
     Write-Host '== 基本信息 ==' -ForegroundColor Cyan
-    Sh "getprop ro.product.model; getprop ro.build.display.id; getprop ro.build.version.release; getprop ro.boot.flash.locked; getprop ro.boot.verifiedbootstate"
+    Sh "getprop ro.product.model; getprop ro.build.display.id; getprop ro.build.version.release"
+    Write-Host '== Bootloader 真实状态（从 /proc/cmdline 读，getprop 的值被 Magisk 伪装过）==' -ForegroundColor Cyan
+    Sh "su -c 'cat /proc/cmdline' | tr ' ' '\\n' | grep -E '^(bootlock|userlock|androidboot.verifiedbootstate|androidboot.veritymode)='"
+    Write-Host '== getprop（已被伪装，不可信）==' -ForegroundColor DarkGray
+    Sh "getprop ro.boot.flash.locked; getprop ro.boot.verifiedbootstate"
     Write-Host '== Root ==' -ForegroundColor Cyan; ShRoot 'id'
     Write-Host '== Magisk ==' -ForegroundColor Cyan; ShRoot 'magisk -v; magiskhide --status'
     Write-Host '== 模块 ==' -ForegroundColor Cyan; ShRoot 'ls /data/adb/modules'
