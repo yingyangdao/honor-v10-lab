@@ -27,6 +27,16 @@
 | **文件管理** | ✅ | MT管理器 |
 | **分区备份** | ✅ | oeminfo / modem / nvm 等 12 个分区 |
 
+### 成果截图
+
+| Magisk 模块（全部中文名） | EdXposed 框架已激活 |
+|---|---|
+| ![magisk](docs/assets/magisk-modules.png) | ![edxposed](docs/assets/edxposed-active.png) |
+
+| AdAway 去广告（7.1 万条） | Termux 终端 |
+|---|---|
+| ![adaway](docs/assets/adaway.png) | ![termux](docs/assets/termux.png) |
+
 ---
 
 ## 二、这台机器最大的三个坑（精华）
